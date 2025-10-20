@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kính Tặng Mẹ — Ngày Phụ Nữ Việt Nam 20/10</title>
+
+<!-- Vietnamese serif with full glyph coverage -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&display=swap&subset=vietnamese" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  background: #f7f7f7;
+  overflow: hidden;
+}
+.floating-deco {
+  position: fixed;
+  top: -100px;
+  pointer-events: none;
+  animation-name: floatDown;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatDown {
+  from { transform: translateY(-100px); opacity: 1; }
+  to { transform: translateY(110vh); opacity: 0; }
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-20vh) rotate(360deg) scale(1.2); opacity: 0; }
+}
+:root{
+  --bg: #f6efe6;         /* cream/beige */
+  --red-deep:#8b2b2b;    /* warm deep red */
+  --red-accent:#b44343;
+  --muted:#6b4f45;
+  --glass: rgba(255,255,255,0.6);
+  --card-shadow: rgba(0,0,0,0.06);
+  --corner:#c86b6b;
+  --max-width:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Noto Serif", "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(200,107,107,0.04), transparent 10%),
+    linear-gradient(180deg,var(--bg), #fffaf3 60%);
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+  padding:28px;
+}
+
+/* container */
+.wrapper{
+  max-width:var(--max-width);
+  margin:0 auto;
+  position:relative;
+}
+
+/* card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,250,245,0.6));
+  border-radius:16px;
+  padding:34px;
+  box-shadow:0 10px 30px var(--card-shadow);
+  border:1px solid rgba(139,43,43,0.06);
+  overflow:hidden;
+  position:relative;
+}
+
+/* header */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:6px;
+}
+.title{
+  color:var(--red-deep);
+  font-size:34px;
+  font-weight:700;
+  letter-spacing:0.4px;
+}
+.subtitle{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:6px;
+}
+.date-badge{
+  background:linear-gradient(90deg, rgba(180,67,67,0.09), transparent);
+  color:var(--red-accent);
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:600;
+  font-size:14px;
+}
+
+/* layout */
+.main{
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap:28px;
+  align-items:start;
+}
+@media (max-width:920px){
+  .main{grid-template-columns:1fr}
+  .title{font-size:24px}
+}
+
+/* photo frame */
+.photo-frame{
+  background:var(--glass);
+  border-radius:14px;
+  padding:12px;
+  border:6px solid rgba(139,43,43,0.05);
+  box-shadow:0 12px 28px rgba(0,0,0,0.05);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.photo-wrap{
+  width:100%;
+  max-width:336px;
+  height:320px;
+  border-radius:10px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, #fff, rgba(255,250,245,0.95));
+  position:relative;
+}
+.photo-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* message column */
+.message{
+  padding:10px 6px;
+}
+.greeting{
+  color:var(--red-deep);
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.paragraph{
+  font-size:15px;
+  color:var(--muted);
+  text-align:justify;
+}
+.poem{
+  margin-top:16px;
+  padding:14px 16px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,245,240,0.6));
+  border:1px dashed rgba(180,67,67,0.10);
+  font-style:italic;
+  color:var(--muted);
+  line-height:1.7;
+}
+.blessing{
+  margin-top:18px;
+  color:var(--red-deep);
+  font-weight:700;
+  font-size:16px;
+}
+
+/* divider decorative */
+.divider{
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(180,67,67,0.12), transparent);
+  margin:18px 0;
+}
+
+/* corner ornaments */
+.corner-svg{
+  position:absolute;
+  width:160px;
+  height:160px;
+  opacity:0.95;
+  pointer-events:none;
+}
+.corner-svg.left{ left:-18px; top:-18px; transform:rotate(-8deg) }
+.corner-svg.right{ right:-18px; bottom:-18px; transform:rotate(8deg) }
+
+/* floating layer for animated decorations */
+.float-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:visible;
+}
+
+/* float items */
+.float{
+  position:absolute;
+  will-change:transform,opacity;
+  opacity:0.96;
+  transform-origin:center;
+}
+.dog-lg{ width:110px; height:110px; }
+.dog-md{ width:78px; height:78px; }
+
+/* animations */
+@keyframes floatY { 0%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-18px) rotate(3deg)} 100%{transform:translateY(0) rotate(0deg)} }
+@keyframes slowSway { 0%{transform:rotate(-4deg)} 50%{transform:rotate(4deg)} 100%{transform:rotate(-4deg)} }
+
+.float.slow{ animation: floatY 12s ease-in-out infinite; }
+.float.slower{ animation: floatY 16s ease-in-out infinite; }
+.float.fast{ animation: floatY 7.5s ease-in-out infinite; }
+.sway{ animation: slowSway 5.5s ease-in-out infinite; }
+
+/* hover interactivity */
+.photo-wrap:hover{ transform:translateY(-6px); transition:transform .28s ease; box-shadow:0 18px 40px rgba(0,0,0,0.06); }
+.poem:hover{ transform:translateY(-4px); transition:transform .24s ease; }
+
+/* small responsive tweaks */
+@media (max-width:600px){
+  .photo-wrap{height:260px}
+  .photo-frame{padding:10px}
+  .title{font-size:20px}
+  .date-badge{font-size:13px}
+  .greeting{font-size:18px}
+}
+
+/* accessible reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .float, .sway, .photo-wrap:hover, .poem:hover { animation:none !important; transition:none !important; transform:none !important; }
+}
+
+/* subtle focus style for keyboard navigation */
+a, button { outline:none; }
+.photo-wrap:focus{ box-shadow:0 0 0 4px rgba(180,67,67,0.08); }
+
+/* improve contrast where needed */
+.message .paragraph, .poem { color:#523c36; }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card" role="main" aria-label="Trang tôn vinh Ngày Phụ Nữ Việt Nam 20 tháng 10">
+      <div class="header">
+        <div>
+          <div class="title">Kính Tặng Mẹ — Ngày Phụ Nữ Việt Nam 20/10</div>
+          <div class="subtitle">Lời tri ân, yêu thương và tôn vinh những người phụ nữ trong đời</div>
+        </div>
+        <div class="date-badge" aria-hidden="false">20 Tháng 10 — Ngày Phụ Nữ Việt Nam</div>
+      </div>
+
+      <div class="main">
+        <!-- LEFT: Photo (final version using mom.jpg) -->
+        <div class="photo-frame" aria-label="Ảnh mẹ">
+          <div class="photo-wrap" tabindex="0" title="Ảnh mẹ">
+            <!-- replace mom.jpg placed next to index.html -->
+            <img src="./mom.jpg" alt="Ảnh mẹ - Kỷ niệm" onerror="this.style.display='none'; document.getElementById('fallback').style.display='flex'">
+            <div id="fallback" style="display:none; align-items:center; justify-content:center; width:100%; height:100%; color:rgba(139,43,43,0.25);">
+              <div style="text-align:center">
+                <div style="font-weight:700; color:var(--red-deep)">Khung ảnh dành cho Mẹ</div>
+                <div style="font-size:13px">Không tìm thấy `mom.jpg`. Hãy chắc file nằm cùng thư mục.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Message + Poem -->
+        <div class="message" aria-label="Lời chúc và bài thơ">
+          <div class="greeting">Thân gửi Mẹ yêu dấu,</div>
+          <div class="paragraph">
+            Nhân Ngày Phụ Nữ Việt Nam 20/10, con chúc mẹ sức khỏe dồi dào, an yên trong lòng và luôn rạng rỡ như những đóa hoa mẹ yêu thích.
+            <br><br>
+            (Bông) Gâu gâu gâu, gâu gâu, gâu, gâu gâu gâu!
+          </div>
+
+          <div class="divider" aria-hidden="true"></div>
+
+          <div class="poem" aria-label="Bài thơ truyền thống">
+            <strong>Thơ truyền thống:</strong>
+            <div style="margin-top:8px">
+              Áo lụa vờn trăng, dáng thướt tha,<br>
+              Tay gánh nắng sớm, tấm lòng hoa.<br>
+              Một đời cho con, vững bờ mây,<br>
+              Tên mẹ khắc mãi muôn thuở này.
+            </div>
+          </div>
+
+          <div style="margin-top:12px" class="paragraph">
+            <span style="display:inline-block; vertical-align:middle; margin-right:8px;">
+              <!-- small decorative rose -->
+              <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 20c6 0 10 4 10 8s-4 8-10 8-10-4-10-8 4-8 10-8z" fill="#e78a9a"/>
+              </svg>
+            </span>
+            Xin chúc mẹ và mọi người phụ nữ quanh ta luôn được trân trọng, yêu thương và có những ngày thật nhiều niềm vui.
+          </div>
+
+          <div class="blessing">Lời chúc: An khang thịnh vượng. Tâm an, sắc thắm.</div>
+        </div>
+      </div>
+
+      <!-- Floating decorations layer -->
+      <div class="float-layer" aria-hidden="true">
+        <!-- top-left corner ornament -->
+        <div class="corner-svg left">
+          <svg viewBox="0 0 200 200" width="160" height="160">
+            <defs>
+              <linearGradient id="cg1" x1="0" x2="1">
+                <stop offset="0" stop-color="#f1d7d7"/>
+                <stop offset="1" stop-color="#c86b6b"/>
+              </linearGradient>
+            </defs>
+            <path d="M12 170 C70 60, 130 48, 190 10" fill="none" stroke="url(#cg1)" stroke-width="6" stroke-linecap="round" />
+            <g transform="translate(18,22)">
+              <circle cx="36" cy="36" r="10" fill="#fff1f1"/>
+              <circle cx="58" cy="16" r="8" fill="#f3c6c6"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- floating flowers (SVG) -->
+        <div class="float dog-lg slowe 1" style="left:78%; top:36%; animation-duration:18s;">
+          <!-- use dog.jpg as decorative floating Samoyed -->
+          <img src="./dog.png" alt="Samoyed" style="width:120px; position:absolute; top:20px; right:20px;">
+        </div>
+        <div class="float dog-md slow 2" style="left:12%; top:66%; animation-duration:11s;">
+          <img src="./dog.png" alt="Samoyed" style="width:120px; position:absolute; top:20px; right:20px;">
+        </div>
+        <div class="float dog-md slow 3" style="left:5%; top:16%; animation-duration:11s;">
+          <img src="./dog.png" alt="Samoyed" style="width:120px; position:absolute; top:20px; right:20px;">
+        </div>
+
+      <!-- bottom-right ornament -->
+      <div class="corner-svg right" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="160" height="160">
+          <defs>
+            <linearGradient id="cg2" x1="0" x2="1">
+              <stop offset="0" stop-color="#f2dad9"/>
+              <stop offset="1" stop-color="#c86b6b"/>
+            </linearGradient>
+          </defs>
+          <path d="M190 12 C120 132, 50 152, 10 190" fill="none" stroke="url(#cg2)" stroke-width="6" stroke-linecap="round" />
+          <g transform="translate(40,80)">
+            <circle cx="40" cy="40" r="10" fill="#fff1f1" />
+            <circle cx="20" cy="20" r="8" fill="#f3c6c6" />
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+/*
+  Responsive floating PNGs:
+  - Count, size, and speed adapt to viewport (mobile/tablet/desktop).
+  - Re-render on resize (debounced).
+  - Respect prefers-reduced-motion.
+*/
+(() => {
+  const FLOAT_CLASS = 'floating-deco';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Use the existing decorations if you keep it identical, otherwise this fallback covers common assets.
+  const decorations = [
+    'flowers/rose.png',
+    // 'flowers/orchid.png',
+    // 'flowers/cherry.png',
+    // 'flowers/sunflower.png',
+    'flowers/tulip.png',
+    'dog.png'
+  ];
+
+  function getConfig() {
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    const area = vw * vh;
+
+    // Base count scales with area; clamped for mobile/desktop comfort.
+    const baseCount = Math.round(Math.min(18, Math.max(6, area / 120000)));
+
+    // Slightly reduce density on high-DPR devices.
+    const perfScale = window.devicePixelRatio && window.devicePixelRatio > 1.5 ? 0.85 : 1;
+    const count = Math.max(0, Math.round(baseCount * perfScale));
+
+    // Size scales with viewport; clamped for readability.
+    const minSize = Math.round(Math.max(26, Math.min(44, vw * 0.06)));
+    const maxSize = Math.round(Math.max(minSize + 14, Math.min(90, vw * 0.10 + 24)));
+
+    // Duration scales with height for longer screens.
+    const minDur = 9 + Math.min(8, vh / 280);
+    const maxDur = minDur + 6;
+    const maxDelay = 12;
+
+    return { count, minSize, maxSize, minDur, maxDur, maxDelay };
+  }
+
+  function clearFloats() {
+    document.querySelectorAll('.' + FLOAT_CLASS).forEach(el => el.remove());
+  }
+
+  function spawnFloats() {
+    clearFloats();
+    const cfg = getConfig();
+
+    for (let i = 0; i < cfg.count; i++) {
+      const img = new Image();
+      img.src = decorations[Math.floor(Math.random() * decorations.length)];
+      img.className = FLOAT_CLASS;
+      img.style.left = Math.random() * 100 + 'vw';
+      img.style.width = (cfg.minSize + Math.random() * (cfg.maxSize - cfg.minSize)) + 'px';
+      img.style.animationDuration = (cfg.minDur + Math.random() * (cfg.maxDur - cfg.minDur)) + 's';
+      img.style.animationDelay = (Math.random() * cfg.maxDelay) + 's';
+      img.onerror = function () { this.remove(); };
+      document.body.appendChild(img);
+    }
+  }
+
+  if (!reduceMotion) {
+    spawnFloats();
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(spawnFloats, 180);
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>
